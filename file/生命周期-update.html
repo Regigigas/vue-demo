@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+  <script>
+    // 当逻辑 逻辑复杂度 超过上面的例子, 推荐使用 methods
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '012345678'
+      },
+      // this.$data 访问 vue 实例中的数据, 并且能修改数据
+      // this.$el 访问挂载点, 即访问 dom
+      // vm.$mount(el) 创建挂载点
+      // 销毁实例 调用 app.$destroy()
+      // 使用 outHTML 获取包括标签本身的内容
+      beforeCreate: function() {
+        console.log('beforeCreate');
+      },
+      created: function() {
+        console.log('created');
+      },
+      beforeMount: function() {
+        console.log('beforeMount');
+        console.log(this.$el);
+      },
+      mounted: function() {
+        console.log('mounted');
+        console.log(this.$el);
+      },
+      // 数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。
+      beforeUpdate: function() {
+        console.log('beforeUpdate');
+      },
+      // 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+      updated: function() {
+        console.log('updated');
+      }
+      // 当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。
+      // 注意 updated 不会承诺所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以用 vm.$nextTick 替换掉 updated：
+
+      // updated: function () {
+      //   this.$nextTick(function () {
+      //     // Code that will run only after the
+      //     // entire view has been re-rendered
+      //   })
+      // }
+      // 该钩子在服务器端渲染期间不被调用。
+    });
+  </script>
+</body>
+</html>

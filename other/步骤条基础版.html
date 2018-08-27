@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+	<div id="app" class="layout">
+        <!-- 基本用法，组件会根据 current 的值 自动判断各步骤状态。 -->
+        <!-- title是 右旁边的小字 -->
+        <Steps :current="1">
+            <Step title="已完成" content="这里是该步骤的描述信息"></Step>
+            <Step title="已完成" content="这里是该步骤的描述信息"></Step>
+            <Step title="进行中" content="这里是该步骤的描述信息"></Step>
+            <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+            <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+        </Steps>
+	</div>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+				
+		},
+		methods: {
+				
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+	<div id="app" class="layout">
+		<!-- 通过 v-model 的值 来判别当前的文件 是选中还是 未选中状态, true 选中, false 未选中 -->
+		<Checkbox v-model="disabledSingle" disabled>Checkbox</Checkbox>
+		<CheckboxGroup v-model="disabledGroup">
+			<Checkbox label="香蕉" disabled></Checkbox>
+			<Checkbox label="苹果" disabled></Checkbox>
+			<Checkbox label="西瓜"></Checkbox>
+		</CheckboxGroup>
+	</div>
+<script>
+	new Vue({
+		data () {
+            return {
+                disabledSingle: true,
+                disabledGroup: ['苹果']
+            }
+        },
+		methods: {
+				
+		}
+	}).$mount("#app")
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <div id="test_1">
+    <!-- dom 上进行简单计算 -->
+    <!-- 判断 count 是否 等于1, 等于1 就会输出 '我等于一', 不等于1,就会输出 '我不等于一' -->
+    <p>{{ count === 1 ? '我等于一' : '我不等于一' }}</p>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#test_1',
+      data: {
+        count: 1
+      }
+    });
+  </script>
+</body>
+</html>

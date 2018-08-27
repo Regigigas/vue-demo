@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+    <!-- push()
+    pop()
+    shift()
+    unshift()
+    splice()
+    sort()
+    reverse() -->
+
+  <div id="app">  
+    <div>  
+      push方法：  
+      <input type="text" v-model="text" @keyup.enter="methodByPush">  
+      <input type="button" value="测试功能" @click="methodByPush">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div>
+    <div>  
+      pop方法：  
+      <input type="button" value="测试功能" @click="methodByPop">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div>
+
+    <!-- <div>
+      shift方法：  
+      <input type="button" value="测试功能" @click="methodByShift">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div>
+    <div>  
+      unshift方法：  
+      <input type="text" v-model="text" @keyup.enter="methodByUnshift">  
+      <input type="button" value="测试功能" @click="methodByUnshift">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div> -->
+
+    <!-- <div>  
+      splice方法：  
+      <input type="button" value="测试功能" @click="methodBySplice">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div> -->
+
+    <!-- <div>
+      sort方法：  
+      <input type="button" value="测试功能" @click="methodBySort">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div> -->
+
+    <!-- <div>  
+    reverse方法：  
+      <input type="button" value="测试功能" @click="methodByReverse">  
+      <ul>  
+        <li v-for="item of items">  
+          <span v-text="item"></span>  
+        </li>  
+      </ul>  
+    </div> -->
+
+    result显示的地方：<br/>  
+    <span v-text="result"></span>  
+  </div>
+  <script>
+    // this.items 能访问到数据
+    var vm = new Vue({  
+      el: '#app',  
+      data: {  
+        items: [],  
+        text: '',  
+        result: '',
+        spliceArr: [0, 1, 2],
+        num: [1, 4, 3, 2, 0],
+        reverseNum: [0, 1, 2, 3]
+      },  
+      methods: {  
+        methodByPush: function () {  
+          this.result = this.items.push(this.text)  
+          this.text = ''  
+        },
+        
+        // 底部删除
+        methodByPop: function () {  
+          this.result = ''  
+          this.result = this.items.pop()  
+        },
+
+        // 首部删除
+        methodByShift: function () {  
+          this.result = ''  
+          this.result = this.items.shift()  
+        },
+
+        // 首部添加
+        methodByUnshift: function () {  
+          this.result = ''  
+          this.result = this.items.unshift(this.text)  
+          this.text = ''  
+        },
+        
+        /*
+        参数一	必需。规定从何处添加/删除元素。
+        该参数是开始插入和（或）删除的数组元素的下标，必须是数字。
+        参数二	必需。规定应该删除多少元素。必须是数字，但可以是 "0"。
+        如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。
+        参数三	可选。要添加到数组的新元素*/
+        methodBySplice: function () {  
+          this.result = ''  
+          this.result = this.spliceArr.splice(2, 1, '--haha')
+          console.log(typeof this.spliceArr)
+          console.log(typeof this.result)
+        },
+        
+        // 排序
+        methodBySort: function () {  
+          this.result = ''  
+          this.result = this.num.sort()  
+        },
+
+        // 反转数组
+        methodByReverse: function () {  
+          this.result = ''  
+          this.result = this.reverseNum.reverse()  
+          alert(this.result)
+        }  
+      }  
+    })  
+</script>  
+</body>
+</html>

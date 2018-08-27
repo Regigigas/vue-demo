@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+	<div id="app" class="layout">
+		<!-- 使用CheckboxGroup配合数组来生成组合。在组合使用时，Checkbox 使用 label 来自动判断选中状态。每个 Checkbox 的内容可以自定义，如不填写则默认使用 label 的值。 -->
+		<CheckboxGroup v-model="social">
+			<Checkbox label="twitter">
+				<Icon type="social-twitter"></Icon>
+				<span>Twitter</span>
+			</Checkbox>
+			<Checkbox label="facebook">
+				<Icon type="social-facebook"></Icon>
+				<span>Facebook</span>
+			</Checkbox>
+			<Checkbox label="github">
+				<Icon type="social-github"></Icon>
+				<span>Github</span>
+			</Checkbox>
+			<Checkbox label="snapchat">
+				<Icon type="social-snapchat"></Icon>
+				<span>Snapchat</span>
+			</Checkbox>
+		</CheckboxGroup>
+		<CheckboxGroup v-model="fruit">
+			<Checkbox label="香蕉"></Checkbox>
+			<Checkbox label="苹果"></Checkbox>
+			<Checkbox label="西瓜"></Checkbox>
+		</CheckboxGroup>
+	</div>
+<script>
+	new Vue({
+		data () {
+            return {
+                social: ['facebook', 'github'],
+                fruit: ['苹果']
+            }
+        },
+		methods: {
+				
+		}
+	}).$mount("#app")
+</script>
+</body>
+</html>

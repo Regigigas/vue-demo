@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+	<div id="app" class="layout">
+        <Steps :current="1">
+                <Step title="注册" icon="person-add"></Step>
+                <Step title="上传头像" icon="camera"></Step>
+                <Step title="验证邮箱" icon="email"></Step>
+        </Steps>
+	</div>
+<script>
+	new Vue({
+		data: {
+			count: 2	
+		},
+		methods: {
+				
+		}
+	}).$mount("#app")
+</script>
+</body>
+</html>

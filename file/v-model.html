@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <div id="test_1">
+    <input type="text" v-model="message" />
+    <h4>下面是v-model初始值, 它将会被动态改变</h4>
+    <p>{{ message }}</p>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#test_1',
+      data: {
+        item: 'haha',
+        message: ''
+      }
+    });
+  </script>
+</body>
+</html>

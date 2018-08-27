@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <h1>
+    <a name="hello-world" href="#hello-world">
+      <anchored-heading :level="1">Hello world!</anchored-heading>
+    </a>
+  </h1>
+  <script>
+    // dom 中包裹的内容 需要单词间 推荐使用 - 连接
+    // component 中推荐使用 小驼峰写法
+    var app = new Vue();
+    Vue.component('anchoredHeading', {
+      render: function (createElement) {
+        return createElement(
+          'h' + this.level,   // tag name 标签名称
+          this.$slots.default // 子组件中的阵列
+        )
+      },
+      props: {
+        level: {
+          type: Number,
+          required: true
+        }
+      }
+    })
+  </script>
+</body>
+</html>

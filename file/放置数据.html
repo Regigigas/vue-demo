@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <div id="test_1">
+    <p>我的上面防置了数据, 我是写在 data 中的------{{ msg }}</p>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#test_1',
+      data: {
+        // 我改变 msg 对应的 键值, 数据会改变
+        msg: '我是字符串数据'
+      }
+    });
+  </script>
+</body>
+</html>

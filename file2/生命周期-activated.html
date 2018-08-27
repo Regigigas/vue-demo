@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../common/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- <p>{{ message }}</p> -->
+    <keep-alive>
+      <p>{{ message }}</p>
+    </keep-alive>
+  </div>
+  <script>
+    // 当逻辑 逻辑复杂度 超过上面的例子, 推荐使用 methods
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '012345678'
+      },
+      // keep-alive 组件激活时调用
+      activated: function() {
+        console.log('keey-alive激活了----' + 'activated');
+      }
+    });
+  </script>
+</body>
+</html>
